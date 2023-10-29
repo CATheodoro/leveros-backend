@@ -12,7 +12,7 @@ public class RequestEntity {
     Integer id;
 
     @Column(name = "number")
-    @Min(value = 10000, message = "O valor de 'number' deve ser no mínimo 10000")
+    @Min(value = 100000, message = "O valor de 'number' deve ser no mínimo 10000")
     Integer number;
 
     @Column(name = "price")

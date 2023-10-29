@@ -11,9 +11,9 @@ import java.util.Map;
 public interface RequestRepository extends JpaRepository <RequestEntity, Integer> {
 
     @Query(value = "SELECT " +
-            "SUM(CASE WHEN r.status = '0' THEN 1 ELSE 0 END) AS qtdStatusProcessando, " +
+            "SUM(CASE WHEN r.status = '0' THEN 1 ELSE 0 END) AS qtdStatusAprovado, " +
             "SUM(CASE WHEN r.status = '1' THEN 1 ELSE 0 END) AS qtdStatusPendente, " +
-            "SUM(CASE WHEN r.status = '2' THEN 1 ELSE 0 END) AS qtdStatusAprovado, " +
+            "SUM(CASE WHEN r.status = '2' THEN 1 ELSE 0 END) AS qtdStatusProcessando, " +
             "SUM(CASE WHEN r.status = '3' THEN 1 ELSE 0 END) AS qtdStatusCancelado, " +
             "SUM(1) AS qtdTotalPedidos " +
             "FROM request_entity r;", nativeQuery = true)
